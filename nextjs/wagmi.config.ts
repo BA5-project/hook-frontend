@@ -24,7 +24,7 @@ export default defineConfig({
           421613: "0x0000000000000000000000000000000000000000", // arbitrum goerli
           421614: "0x0000000000000000000000000000000000000000", // arbitrum sepolia
           534351: "0x0000000000000000000000000000000000000000", // scroll  sepolia
-          11155111: "0x0000000000000000000000000000000000000000", // sepolia
+          11155111: "0x4C3bb7E3eb22a1AED4f16D87A3427034E394cAc0", // sepolia
         },
 
         // --------------------------------------------------
@@ -40,7 +40,7 @@ export default defineConfig({
           421613: "0xC94a4C0a89937E278a0d427bb393134E68d5ec09",
           421614: "0xb673AE03413860776497B8C9b3E3F8d4D8745cB3",
           534351: "0xeb4708989b42f0cd327A6Bd8f76a931429137fd7",
-          11155111: "0x7B2B5A2c377B34079589DDbCeA20427cdb7C8219",
+          11155111: "0xc021A7Deb4a939fd7E661a0669faB5ac7Ba2D5d6",
         },
         PoolInitializeTest: {
           31337: "0xFEB29bB43e36c0F8488F78bba2E8E94F0D829Fa1",
@@ -55,7 +55,7 @@ export default defineConfig({
           421613: "0xa26b026581Fa923CFf3084119bf2d14060945a63",
           421614: "0x24C731645ee1e35C3219153d370EBd79784D1E91",
           534351: "0x3A0c2cF7c40A7B417AE9aB6ccBF60e86d8437395",
-          11155111: "0x5Bf9FAbb0d56515658b7d5CC4B1F5c4EaED09e49",
+          11155111: "0x7024cc7e60D6560f0B5877DA2bb921FCbF1f4375",
         },
         PoolModifyLiquidityTest: {
           31337: "0x3079c0319f8734239eb06765666468f7b76eb505",
@@ -67,7 +67,7 @@ export default defineConfig({
           421613: "0xeb1aAdAC0a10Ac2eDFCbE496C3BCBc1dea4F994b",
           421614: "0x30654C69B212AD057E817EcA26da6c5edA32E2E7",
           534351: "0x5Bf9FAbb0d56515658b7d5CC4B1F5c4EaED09e49",
-          11155111: "0xeb4708989b42f0cd327A6Bd8f76a931429137fd7",
+          11155111: "0x39BF2eFF94201cfAA471932655404F63315147a4",
         },
         PoolDonateTest: {
           31337: "0x4fa6c7a3a9b84f2a8340d4d33190f84e307b085c",
@@ -92,7 +92,7 @@ export default defineConfig({
         421613: "0x5cbA23E581A5cBee77BE4E98Df0bCea74C0B5C9a",
         421614: "0x615bCf3371F7daF8E8f7d26db10e12F0F4830C94",
         534351: "0x5bA874E13D2Cf3161F89D1B1d1732D14226dBF16",
-        11155111: "0x615bCf3371F7daF8E8f7d26db10e12F0F4830C94",
+        11155111: "0x0f1D1b7abAeC1Df25f2C4Db751686FC5233f6D3f",
       },
       name: "Token0",
     },
@@ -108,7 +108,7 @@ export default defineConfig({
         421613: "0x84642fEf6ef575e3B2f4d7C72022F24AB9C9Ffa6",
         421614: "0x3D5e538D212b05bc4b3F70520189AA3dEA588B1E",
         534351: "0x5C038EE8AB7bD7699037E277874F1c611aD0C28F",
-        11155111: "0x3D5e538D212b05bc4b3F70520189AA3dEA588B1E",
+        11155111: "0xc7c06a77b481869ecc57E5432D03c3661406424D",
       },
       name: "Token1",
     },

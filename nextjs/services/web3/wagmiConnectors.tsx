@@ -8,6 +8,7 @@ import {
   safeWallet,
   walletConnectWallet,
 } from "@rainbow-me/rainbowkit/wallets";
+import { Chain } from "viem";
 import { configureChains } from "wagmi";
 import * as chains from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
@@ -19,17 +20,48 @@ import { getTargetNetwork } from "~~/utils/scaffold-eth";
 const configuredNetwork = getTargetNetwork();
 const { onlyLocalBurnerWallet } = scaffoldConfig;
 
+
+const sepolia= {
+  id: 11155111,
+  network: "sepolia",
+  name: "Sepolia",
+  nativeCurrency: {
+       name: "Sepolia Ether",
+       symbol: "SEP",
+       decimals: 18,
+  },
+  rpcUrls: {
+       default: {
+           http:  ["https://endpoints.omniatech.io/v1/eth/sepolia/public"],
+      },
+       public: {
+           http: ["https://endpoints.omniatech.io/v1/eth/sepolia/public"],
+      },
+  },
+  blockExplorers: {
+       etherscan: {
+       name: "Etherscan",
+       url: "https://sepolia.etherscan.io",
+      },
+       default: {
+           name: "Etherscan",
+           url: "https://sepolia.etherscan.io",
+      },
+  },
+   contracts: {
+       multicall3: {
+           address: "0xca11bde05977b3631167028862be2a173976ca11",
+           blockCreated: 6507670,
+      },
+  },
+  testnet: true,
+} as const satisfies Chain;
+
+
 // We always want to have mainnet enabled (ENS resolution, ETH price, etc). But only once.
 export const enabledChains = [
-  chains.foundry,
   chains.goerli,
-  chains.sepolia,
-  chains.polygonMumbai,
-  chains.polygonZkEvmTestnet,
-  chains.arbitrumGoerli,
-  chains.optimismGoerli,
-  chains.baseGoerli,
-  chains.scrollSepolia,
+  sepolia,
 ];
 
 /**
@@ -38,21 +70,9 @@ export const enabledChains = [
 export const appChains = configureChains(
   enabledChains,
   [
-    alchemyProvider({
-      apiKey: scaffoldConfig.alchemyApiKey,
-    }),
     publicProvider(),
   ],
-  {
-    // We might not need this checkout https://github.com/scaffold-eth/scaffold-eth-2/pull/45#discussion_r1024496359, will test and remove this before merging
-    stallTimeout: 3_000,
-    // Sets pollingInterval if using chain's other than local hardhat chain
-    ...(configuredNetwork.id !== chains.hardhat.id
-      ? {
-          pollingInterval: scaffoldConfig.pollingInterval,
-        }
-      : {}),
-  },
+  
 );
 
 const walletsOptions = { chains: appChains.chains, projectId: scaffoldConfig.walletConnectProjectId };

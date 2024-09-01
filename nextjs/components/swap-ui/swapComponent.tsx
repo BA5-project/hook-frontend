@@ -28,7 +28,7 @@ function SwapComponent() {
   const [toCurrency, setToCurrency] = useState(BLANK_TOKEN.address);
   const [fromAmount, setFromAmount] = useState("");
 
-  const [swapFee, setSwapFee] = useState(3000n);
+  const [swapFee, setSwapFee] = useState(4000n);
   const [tickSpacing, setTickSpacing] = useState(60n);
   const [hookData, setHookData] = useState<string>(""); // New state for custom hook data
   const [hookAddress, setHookAddress] = useState<`0x${string}`>(
@@ -83,9 +83,9 @@ function SwapComponent() {
               fromCurrency.toLowerCase() < toCurrency.toLowerCase() ? MIN_SQRT_PRICE_LIMIT : MAX_SQRT_PRICE_LIMIT, // unlimited impact
           },
           {
-            withdrawTokens: true,
-            settleUsingTransfer: true,
-            currencyAlreadySent: false
+            takeClaims	: false,
+            settleUsingBurn: false
+            
           },
           hookData as `0x${string}`,
         ],
